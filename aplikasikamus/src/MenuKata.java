@@ -70,7 +70,6 @@ public class MenuKata extends javax.swing.JFrame {
 
         iconLogOut.setBackground(new java.awt.Color(85, 239, 196));
         iconLogOut.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        iconLogOut.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Webp.net-resizeimage (5).png")); // NOI18N
         iconLogOut.setText("Log Out");
         iconLogOut.setIconTextGap(8);
         iconLogOut.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +80,6 @@ public class MenuKata extends javax.swing.JFrame {
 
         iconProfile.setBackground(new java.awt.Color(85, 239, 196));
         iconProfile.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        iconProfile.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Webp.net-resizeimage (7).png")); // NOI18N
         iconProfile.setText("Profil Admin");
         iconProfile.setIconTextGap(8);
         iconProfile.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +90,6 @@ public class MenuKata extends javax.swing.JFrame {
 
         iconTambahKata.setBackground(new java.awt.Color(85, 239, 196));
         iconTambahKata.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        iconTambahKata.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Webp.net-resizeimage (2).png")); // NOI18N
         iconTambahKata.setText("Tambah Kata");
         iconTambahKata.setIconTextGap(8);
         iconTambahKata.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +100,6 @@ public class MenuKata extends javax.swing.JFrame {
 
         iconHapusKata.setBackground(new java.awt.Color(85, 239, 196));
         iconHapusKata.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        iconHapusKata.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Webp.net-resizeimage (4).png")); // NOI18N
         iconHapusKata.setText("Hapus Kata");
         iconHapusKata.setIconTextGap(8);
         iconHapusKata.addActionListener(new java.awt.event.ActionListener() {
@@ -111,8 +107,6 @@ public class MenuKata extends javax.swing.JFrame {
                 iconHapusKataActionPerformed(evt);
             }
         });
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Downloads\\Webp.net-resizeimage (1).png")); // NOI18N
 
         javax.swing.GroupLayout menupanelLayout = new javax.swing.GroupLayout(menupanel);
         menupanel.setLayout(menupanelLayout);
