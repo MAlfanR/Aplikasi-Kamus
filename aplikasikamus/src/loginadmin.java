@@ -1,3 +1,12 @@
+
+import Koneksi.Db_koneksi;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -215,13 +224,35 @@ public class loginadmin extends javax.swing.JFrame {
 
     private void button_masukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_masukActionPerformed
         // TODO add your handling code here:
+        PreparedStatement ps;
+        ResultSet rs;
+        String username;
+        String password;
+        
+        username = jTextField1.getText();
+        password = String.valueOf(jPasswordField1.getPassword());
+        String query = "SELECT * FROM `admin` WHERE `username` = ? AND `password` = ?";
+        
+        try {
+            ps = Db_koneksi.getKoneksi().prepareStatement(query);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            rs = ps.executeQuery();
+        
+        if(rs.next()) {
         MenuKata form = new MenuKata();
         form.setVisible(true);
         form.pack();
         form.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_button_masukActionPerformed
-
+        else {
+            JOptionPane.showMessageDialog(null, "Username atau Password salah!", "Login Error", 2);
+        }
+        } catch (SQLException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * @param args the command line arguments
      */
