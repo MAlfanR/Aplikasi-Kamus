@@ -318,7 +318,11 @@ public class MenuKata extends javax.swing.JFrame {
         int dialogResult = JOptionPane.showConfirmDialog(this, "Anda yakin akan keluar?", "PERINGATAN", dialogBtn);
         
         if (dialogResult==0) {
-            System.exit(0);
+            loginadmin form = new loginadmin();
+            form.setVisible(true);
+            form.pack();
+            form.setLocationRelativeTo(null);
+            this.dispose();
         } else {
             
         }
