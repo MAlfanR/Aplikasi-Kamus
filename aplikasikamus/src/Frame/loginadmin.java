@@ -1,4 +1,8 @@
+package Frame;
 
+
+import Frame.login;
+import Frame.MenuKata;
 import Koneksi.Db_koneksi;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -217,6 +221,7 @@ public class loginadmin extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

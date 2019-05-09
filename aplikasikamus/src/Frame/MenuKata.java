@@ -1,8 +1,16 @@
+package Frame;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import Koneksi.Db_koneksi;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -59,7 +67,6 @@ public class MenuKata extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Kata");
-        setPreferredSize(new java.awt.Dimension(643, 538));
 
         BodyPanel.setBackground(new java.awt.Color(26, 188, 156));
 
@@ -178,7 +185,12 @@ public class MenuKata extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Masukkan ke :");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teknik Informatika", "Teknik Elektro", "Arsitektur", "Biologi" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IF", "EL", "AR", "BI" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelTambahKataLayout = new javax.swing.GroupLayout(PanelTambahKata);
         PanelTambahKata.setLayout(PanelTambahKataLayout);
@@ -356,7 +368,29 @@ public class MenuKata extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        PreparedStatement ps;
+        ResultSet rs;
+        String keyword;
+        String deskripsi_kata;
+        String kd_prodi;
         
+        keyword = jTextField1.getText();
+        deskripsi_kata = jTextArea2.getText();
+        kd_prodi = (String) jComboBox1.getSelectedItem();
+    
+        String query = "INSERT INTO kata VALUES (?,?,?)";
+        
+        try {
+            ps = Db_koneksi.getKoneksi().prepareStatement(query);
+            
+            ps.setString (1, keyword);
+            ps.setString (2, deskripsi_kata);
+            ps.setString (3, kd_prodi); 
+            
+            ps.executeUpdate();
+        } catch(SQLException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void iconProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconProfileActionPerformed
@@ -369,6 +403,10 @@ public class MenuKata extends javax.swing.JFrame {
         mainpanel.repaint();
         mainpanel.revalidate();
     }//GEN-LAST:event_iconProfileActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
