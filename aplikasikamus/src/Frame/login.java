@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
  * @author M Alfan R
  */
 public class login extends javax.swing.JFrame {
-
+String a , b;
     /**
      * Creates new form login
      */
@@ -158,17 +158,19 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
         PreparedStatement ps;
         ResultSet rs;
-        String username;
-        String password;
+        String usernamee;
+        String passwordd;
         
-        username = jTextField1.getText();
-        password = String.valueOf(jPasswordField1.getPassword());
+        
+        usernamee = jTextField1.getText();
+        passwordd = String.valueOf(jPasswordField1.getPassword());
+      
         String query = "SELECT * FROM `mahasiswa` WHERE `username` = ? AND `password` = ?";
         
         try {
             ps = Db_koneksi.getKoneksi().prepareStatement(query);
-            ps.setString(1, username);
-            ps.setString(2, password);
+            ps.setString(1, usernamee);
+            ps.setString(2, passwordd);
             rs = ps.executeQuery();
         
         if(rs.next()) {

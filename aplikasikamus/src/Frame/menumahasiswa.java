@@ -740,8 +740,21 @@ public class menumahasiswa extends javax.swing.JFrame {
 
     private void namaaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaaActionPerformed
         // TODO add your handling code here:
-        
-        
+  /*      try{
+            Connection con = Db_koneksi.getKoneksi();
+            Statement st = con.createStatement();
+            String query = "select name from mahasiswa where username = '" + a+"' AND password ='"+b+"' ";
+            ResultSet rs = st.executeQuery(query);
+            String x = null;
+            while (rs.next()){
+                x = rs.getString(1);
+            }
+            namaa.setText(x);
+         
+        }catch (Exception e){
+            
+        }
+        */
         
     }//GEN-LAST:event_namaaActionPerformed
 
@@ -762,6 +775,7 @@ public class menumahasiswa extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Kata tidak tersedia");
             }
         } catch (Exception e) {
+            
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -881,7 +895,8 @@ public class menumahasiswa extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    
+  public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -906,12 +921,14 @@ public class menumahasiswa extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+       java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new menumahasiswa().setVisible(true);
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Arsitektur;

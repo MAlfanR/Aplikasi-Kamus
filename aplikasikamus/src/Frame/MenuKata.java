@@ -6,9 +6,11 @@ package Frame;
  * and open the template in the editor.
  */
 import Koneksi.Db_koneksi;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -50,6 +52,7 @@ public class MenuKata extends javax.swing.JFrame {
         iconHapusKata = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         mainpanel = new javax.swing.JPanel();
         PanelTambahKata = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -63,8 +66,24 @@ public class MenuKata extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         PanelHapusKata = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jLabel9 = new javax.swing.JLabel();
+        katahapus = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
         PanelProfile = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        paneleditkata = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        kataedit = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        carii = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        deskripsi = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Kata");
@@ -125,10 +144,21 @@ public class MenuKata extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("iPedia");
 
+        jButton2.setText("Edit Kata");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout menupanelLayout = new javax.swing.GroupLayout(menupanel);
         menupanel.setLayout(menupanelLayout);
         menupanelLayout.setHorizontalGroup(
             menupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menupanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addGap(48, 48, 48))
             .addGroup(menupanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(menupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,12 +169,9 @@ public class MenuKata extends javax.swing.JFrame {
                         .addGap(8, 8, 8))
                     .addComponent(iconProfile, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                     .addComponent(iconHapusKata, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-                    .addComponent(iconTambahKata, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
+                    .addComponent(iconTambahKata, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menupanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(48, 48, 48))
         );
         menupanelLayout.setVerticalGroup(
             menupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +186,9 @@ public class MenuKata extends javax.swing.JFrame {
                 .addComponent(iconTambahKata, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(iconHapusKata, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(iconLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -179,6 +208,12 @@ public class MenuKata extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Kata yang akan ditambahkan :");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -249,7 +284,7 @@ public class MenuKata extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         mainpanel.add(PanelTambahKata, "card2");
@@ -260,21 +295,81 @@ public class MenuKata extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("HAPUS KATA");
 
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane3.setViewportView(jTextArea3);
+
+        jLabel9.setText("Kata yang ingin di hapus");
+
+        katahapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                katahapusActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Hapus");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Cari");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Deskripsi kata");
+
         javax.swing.GroupLayout PanelHapusKataLayout = new javax.swing.GroupLayout(PanelHapusKata);
         PanelHapusKata.setLayout(PanelHapusKataLayout);
         PanelHapusKataLayout.setHorizontalGroup(
             PanelHapusKataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelHapusKataLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
             .addGroup(PanelHapusKataLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
-                .addContainerGap(354, Short.MAX_VALUE))
+                .addGroup(PanelHapusKataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelHapusKataLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel11)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PanelHapusKataLayout.createSequentialGroup()
+                        .addGroup(PanelHapusKataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3)
+                            .addGroup(PanelHapusKataLayout.createSequentialGroup()
+                                .addGroup(PanelHapusKataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9)
+                                    .addGroup(PanelHapusKataLayout.createSequentialGroup()
+                                        .addComponent(katahapus, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(jButton4)))
+                                .addGap(0, 59, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         PanelHapusKataLayout.setVerticalGroup(
             PanelHapusKataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelHapusKataLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(467, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelHapusKataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(katahapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4))
+                .addGap(9, 9, 9)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         mainpanel.add(PanelHapusKata, "card3");
@@ -299,10 +394,94 @@ public class MenuKata extends javax.swing.JFrame {
             .addGroup(PanelProfileLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(467, Short.MAX_VALUE))
+                .addContainerGap(543, Short.MAX_VALUE))
         );
 
         mainpanel.add(PanelProfile, "card4");
+
+        paneleditkata.setBackground(new java.awt.Color(41, 128, 185));
+
+        jLabel10.setText("EDIT KATA");
+
+        kataedit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kataeditActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setText("Kata yang ingin di edit");
+
+        carii.setText("Cari");
+        carii.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cariiActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setText("Deskripsi kata");
+
+        jButton6.setText("Edit");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        deskripsi.setViewportView(jTextArea4);
+
+        javax.swing.GroupLayout paneleditkataLayout = new javax.swing.GroupLayout(paneleditkata);
+        paneleditkata.setLayout(paneleditkataLayout);
+        paneleditkataLayout.setHorizontalGroup(
+            paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paneleditkataLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(paneleditkataLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel13))
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(paneleditkataLayout.createSequentialGroup()
+                        .addComponent(kataedit, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(carii))
+                    .addComponent(jLabel12))
+                .addContainerGap(68, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneleditkataLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
+            .addGroup(paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(paneleditkataLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(deskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(25, Short.MAX_VALUE)))
+        );
+        paneleditkataLayout.setVerticalGroup(
+            paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paneleditkataLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(kataedit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(carii))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel13)
+                .addGap(283, 283, 283)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(107, Short.MAX_VALUE))
+            .addGroup(paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(paneleditkataLayout.createSequentialGroup()
+                    .addGap(195, 195, 195)
+                    .addComponent(deskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(195, Short.MAX_VALUE)))
+        );
+
+        mainpanel.add(paneleditkata, "card5");
 
         BodyPanel.add(mainpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 11, -1, -1));
 
@@ -406,6 +585,120 @@ public class MenuKata extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void katahapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_katahapusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_katahapusActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+                try {
+            Connection con = Db_koneksi.getKoneksi();
+            Statement st = con.createStatement();
+            String keyword = katahapus.getText();
+            String query = "SELECT deskripsi_kata FROM kata WHERE keyword='"+keyword+"'";
+            ResultSet rs = st.executeQuery(query);
+            String s = null;
+            while (rs.next()) {
+                s = rs.getString(1);
+            }
+            jTextArea3.setText (s);
+            if (!jTextArea3.getText().equals(s)) {
+                JOptionPane.showMessageDialog(null, "Kata tidak tersedia");
+            }
+        } catch (Exception e) {
+            
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        PreparedStatement ps;
+        ResultSet rs;
+        String keyword;
+        
+        keyword = katahapus.getText();
+        String query = "DELETE FROM kata where keyword = '"+keyword+"'";  
+        try {
+            ps = Db_koneksi.getKoneksi().prepareStatement(query);
+           
+            
+            ps.execute();
+            JOptionPane.showMessageDialog(null, "Kata berhasil dihapus");
+        } catch(SQLException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void kataeditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kataeditActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kataeditActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        PreparedStatement ps;
+        ResultSet rs;
+        
+        String keyword;
+        String deskripsi_kata;
+     
+        
+        keyword = kataedit.getText();
+        deskripsi_kata = jTextArea4.getText();
+       
+        
+    
+        String query = "UPDATE kata SET keyword ='"+keyword+"' , deskripsi_kata = '"+deskripsi_kata+"' WHERE keyword = '"+keyword+"' ";
+        
+        try {
+            ps = Db_koneksi.getKoneksi().prepareStatement(query);
+            
+           // ps.setString (1, keyword);
+           // ps.setString (2, deskripsi_kata);
+            
+            ps.execute();
+            JOptionPane.showMessageDialog(null, "Kata berhasil diubah");
+        } catch(SQLException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+         mainpanel.removeAll();
+        mainpanel.repaint();
+        mainpanel.revalidate();
+        //ADD PANEL
+        mainpanel.add(paneleditkata);
+        mainpanel.repaint();
+        mainpanel.revalidate();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void cariiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariiActionPerformed
+        // TODO add your handling code here:
+                     try {
+            Connection con = Db_koneksi.getKoneksi();
+            Statement st = con.createStatement();
+            String keyword = kataedit.getText();
+            String query = "SELECT deskripsi_kata FROM kata WHERE keyword='"+keyword+"'";
+            ResultSet rs = st.executeQuery(query);
+            String s = null;
+            while (rs.next()) {
+                s = rs.getString(1);
+            }
+            jTextArea4.setText (s);
+            if (!jTextArea4.getText().equals(s)) {
+                JOptionPane.showMessageDialog(null, "Kata tidak tersedia");
+            }
+        } catch (Exception e) {
+            
+        }
+    }//GEN-LAST:event_cariiActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -446,13 +739,23 @@ public class MenuKata extends javax.swing.JFrame {
     private javax.swing.JPanel PanelHapusKata;
     private javax.swing.JPanel PanelProfile;
     private javax.swing.JPanel PanelTambahKata;
+    private javax.swing.JButton carii;
+    private javax.swing.JScrollPane deskripsi;
     private javax.swing.JButton iconHapusKata;
     private javax.swing.JButton iconLogOut;
     private javax.swing.JButton iconProfile;
     private javax.swing.JButton iconTambahKata;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -460,10 +763,17 @@ public class MenuKata extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField kataedit;
+    private javax.swing.JTextField katahapus;
     private javax.swing.JPanel mainpanel;
     private javax.swing.JPanel menupanel;
+    private javax.swing.JPanel paneleditkata;
     // End of variables declaration//GEN-END:variables
 }
