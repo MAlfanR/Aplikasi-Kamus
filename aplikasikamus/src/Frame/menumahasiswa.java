@@ -5,6 +5,10 @@
  */
 package Frame;
 
+import Koneksi.Db_koneksi;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
@@ -296,28 +300,24 @@ public class menumahasiswa extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nim)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MenuprofilLayout.createSequentialGroup()
-                        .addComponent(nimm, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tgllahir)
-                            .addComponent(username))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(usernamee, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tgllahirr, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(prodii)
-                            .addComponent(password))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(passwordd, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 9, Short.MAX_VALUE))
-                    .addGroup(MenuprofilLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(prodi, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(nimm, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tgllahir)
+                    .addComponent(username))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usernamee, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tgllahirr, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(prodii)
+                    .addComponent(password))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(passwordd, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prodi, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 27, Short.MAX_VALUE)
                 .addComponent(angkatan)
                 .addGap(14, 14, 14)
                 .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -747,6 +747,22 @@ public class menumahasiswa extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        try {
+            Connection con = Db_koneksi.getKoneksi();
+            Statement st = con.createStatement();
+            String keyword = jTextField1.getText();
+            String query = "SELECT deskripsi_kata FROM kata WHERE keyword='"+keyword+"' AND kd_prodi='IF'";
+            ResultSet rs = st.executeQuery(query);
+            String s = null;
+            while (rs.next()) {
+                s = rs.getString(1);
+            }
+            jTextArea1.setText (s);
+            if (!jTextArea1.getText().equals(s)) {
+                JOptionPane.showMessageDialog(null, "Kata tidak tersedia");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -762,6 +778,22 @@ public class menumahasiswa extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        try {
+            Connection con = Db_koneksi.getKoneksi();
+            Statement st = con.createStatement();
+            String keyword = jTextField2.getText();
+            String query = "SELECT deskripsi_kata FROM kata WHERE keyword='"+keyword+"' AND kd_prodi='EL'";
+            ResultSet rs = st.executeQuery(query);
+            String s = null;
+            while (rs.next()) {
+                s = rs.getString(1);
+            }
+            jTextArea2.setText (s);
+            if (!jTextArea2.getText().equals(s)) {
+                JOptionPane.showMessageDialog(null, "Kata tidak tersedia");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -777,6 +809,22 @@ public class menumahasiswa extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
+        try {
+            Connection con = Db_koneksi.getKoneksi();
+            Statement st = con.createStatement();
+            String keyword = jTextField3.getText();
+            String query = "SELECT deskripsi_kata FROM kata WHERE keyword='"+keyword+"' AND kd_prodi='AR'";
+            ResultSet rs = st.executeQuery(query);
+            String s = null;
+            while (rs.next()) {
+                s = rs.getString(1);
+            }
+            jTextArea3.setText (s);
+            if (!jTextArea3.getText().equals(s)) {
+                JOptionPane.showMessageDialog(null, "Kata tidak tersedia");
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -803,7 +851,22 @@ public class menumahasiswa extends javax.swing.JFrame {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
-        String carkat;
+        try {
+            Connection con = Db_koneksi.getKoneksi();
+            Statement st = con.createStatement();
+            String keyword = jTextField4.getText();
+            String query = "SELECT deskripsi_kata FROM kata WHERE keyword='"+keyword+"' AND kd_prodi='BI'";
+            ResultSet rs = st.executeQuery(query);
+            String s = null;
+            while (rs.next()) {
+                s = rs.getString(1);
+            }
+            jTextArea4.setText (s);
+            if (!jTextArea4.getText().equals(s)) {
+                JOptionPane.showMessageDialog(null, "Kata tidak tersedia");
+            }
+        } catch (Exception e) {
+        }
         
     }//GEN-LAST:event_jButton11ActionPerformed
 

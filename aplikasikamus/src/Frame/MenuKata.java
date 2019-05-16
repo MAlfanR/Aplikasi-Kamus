@@ -110,8 +110,8 @@ public class MenuKata extends javax.swing.JFrame {
 
         iconHapusKata.setBackground(new java.awt.Color(85, 239, 196));
         iconHapusKata.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
-        iconHapusKata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (3).png"))); // NOI18N
-        iconHapusKata.setText("Lihat Kata");
+        iconHapusKata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (4).png"))); // NOI18N
+        iconHapusKata.setText("Hapus Kata");
         iconHapusKata.setIconTextGap(8);
         iconHapusKata.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -385,6 +385,7 @@ public class MenuKata extends javax.swing.JFrame {
             ps.setString (3, kd_prodi); 
             
             ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Kata berhasil ditambahkan");
         } catch(SQLException ex) {
             Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
         }
