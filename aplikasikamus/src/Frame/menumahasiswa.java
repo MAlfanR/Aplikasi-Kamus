@@ -35,6 +35,8 @@ public class menumahasiswa extends javax.swing.JFrame {
         iconlihatkata = new javax.swing.JButton();
         icontopcontributor = new javax.swing.JButton();
         iconlogout = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         Menuprofil = new javax.swing.JPanel();
         profilmahasiswa = new javax.swing.JLabel();
@@ -58,11 +60,14 @@ public class menumahasiswa extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(15, 188, 249));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(15, 188, 249));
+        jPanel2.setBackground(new java.awt.Color(116, 185, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
 
+        iconprofil.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
+        iconprofil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (7).png"))); // NOI18N
         iconprofil.setText("Profil mahasiswa");
         iconprofil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,7 +75,9 @@ public class menumahasiswa extends javax.swing.JFrame {
             }
         });
 
+        iconlihatkata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (3).png"))); // NOI18N
         iconlihatkata.setText("Lihat kata");
+        iconlihatkata.setIconTextGap(10);
         iconlihatkata.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 iconlihatkataActionPerformed(evt);
@@ -79,6 +86,7 @@ public class menumahasiswa extends javax.swing.JFrame {
 
         icontopcontributor.setText("Top Contributor");
 
+        iconlogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (5).png"))); // NOI18N
         iconlogout.setText("Log out");
         iconlogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,39 +94,61 @@ public class menumahasiswa extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (1).png"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Trajan Pro", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("iPedia");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(iconlihatkata, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                    .addComponent(iconprofil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(icontopcontributor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(iconlogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(iconlihatkata, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(iconprofil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(icontopcontributor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(iconlogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(235, 235, 235)
+                .addGap(19, 19, 19)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addGap(122, 122, 122)
                 .addComponent(iconprofil)
                 .addGap(18, 18, 18)
-                .addComponent(iconlihatkata)
+                .addComponent(iconlihatkata, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(icontopcontributor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addComponent(iconlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65))
         );
 
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 630));
+
         jPanel3.setBackground(new java.awt.Color(56, 173, 169));
         jPanel3.setLayout(new java.awt.CardLayout());
 
-        Menuprofil.setBackground(new java.awt.Color(68, 189, 50));
+        Menuprofil.setBackground(new java.awt.Color(0, 153, 153));
         Menuprofil.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
 
+        profilmahasiswa.setFont(new java.awt.Font("Constantia", 0, 24)); // NOI18N
+        profilmahasiswa.setForeground(new java.awt.Color(255, 255, 255));
         profilmahasiswa.setText("PROFIL MAHASISWA");
 
         namaa.addActionListener(new java.awt.event.ActionListener() {
@@ -127,10 +157,16 @@ public class menumahasiswa extends javax.swing.JFrame {
             }
         });
 
+        nama.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        nama.setForeground(new java.awt.Color(255, 255, 255));
         nama.setText("Nama");
 
+        nim.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        nim.setForeground(new java.awt.Color(255, 255, 255));
         nim.setText("NIM");
 
+        tgllahir.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        tgllahir.setForeground(new java.awt.Color(255, 255, 255));
         tgllahir.setText("Tanggal Lahir");
 
         prodi.addActionListener(new java.awt.event.ActionListener() {
@@ -139,6 +175,8 @@ public class menumahasiswa extends javax.swing.JFrame {
             }
         });
 
+        prodii.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        prodii.setForeground(new java.awt.Color(255, 255, 255));
         prodii.setText("Program Studi");
 
         angkatann.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +185,8 @@ public class menumahasiswa extends javax.swing.JFrame {
             }
         });
 
+        angkatan.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        angkatan.setForeground(new java.awt.Color(255, 255, 255));
         angkatan.setText("Angkatan");
 
         usernamee.addActionListener(new java.awt.event.ActionListener() {
@@ -155,12 +195,21 @@ public class menumahasiswa extends javax.swing.JFrame {
             }
         });
 
+        username.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        username.setForeground(new java.awt.Color(255, 255, 255));
         username.setText("Username");
 
+        password.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        password.setForeground(new java.awt.Color(255, 255, 255));
         password.setText("Password");
 
+        konfirm.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        konfirm.setForeground(new java.awt.Color(255, 255, 255));
         konfirm.setText("Konfirmasi Password");
 
+        gantipassword.setBackground(new java.awt.Color(255, 255, 255));
+        gantipassword.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        gantipassword.setForeground(new java.awt.Color(255, 255, 255));
         gantipassword.setText("Ganti Password");
 
         javax.swing.GroupLayout MenuprofilLayout = new javax.swing.GroupLayout(Menuprofil);
@@ -169,9 +218,6 @@ public class menumahasiswa extends javax.swing.JFrame {
             MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuprofilLayout.createSequentialGroup()
                 .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MenuprofilLayout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(profilmahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(MenuprofilLayout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addComponent(nama))
@@ -200,15 +246,17 @@ public class menumahasiswa extends javax.swing.JFrame {
                             .addComponent(konfirmm, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(gantipassword, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(31, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuprofilLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(profilmahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(96, 96, 96))
         );
         MenuprofilLayout.setVerticalGroup(
             MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuprofilLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MenuprofilLayout.createSequentialGroup()
-                        .addComponent(profilmahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21)
+                        .addGap(82, 82, 82)
                         .addComponent(nama)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(namaa, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,9 +278,11 @@ public class menumahasiswa extends javax.swing.JFrame {
                             .addComponent(password))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(passwordd, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 1, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(MenuprofilLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(profilmahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(prodi, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(angkatan)
@@ -249,36 +299,17 @@ public class menumahasiswa extends javax.swing.JFrame {
 
         jPanel3.add(Menuprofil, "card2");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 11, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE)
         );
 
         pack();
@@ -370,6 +401,8 @@ public class menumahasiswa extends javax.swing.JFrame {
     private javax.swing.JButton iconlogout;
     private javax.swing.JButton iconprofil;
     private javax.swing.JButton icontopcontributor;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -49,6 +49,7 @@ public class MenuKata extends javax.swing.JFrame {
         iconTambahKata = new javax.swing.JButton();
         iconHapusKata = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         mainpanel = new javax.swing.JPanel();
         PanelTambahKata = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -68,13 +69,14 @@ public class MenuKata extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Kata");
 
-        BodyPanel.setBackground(new java.awt.Color(26, 188, 156));
+        BodyPanel.setBackground(new java.awt.Color(0, 153, 153));
+        BodyPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menupanel.setBackground(new java.awt.Color(26, 188, 156));
+        menupanel.setBackground(new java.awt.Color(116, 185, 255));
         menupanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
 
         iconLogOut.setBackground(new java.awt.Color(85, 239, 196));
-        iconLogOut.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        iconLogOut.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         iconLogOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (5).png"))); // NOI18N
         iconLogOut.setText("Log Out");
         iconLogOut.setIconTextGap(8);
@@ -85,7 +87,7 @@ public class MenuKata extends javax.swing.JFrame {
         });
 
         iconProfile.setBackground(new java.awt.Color(85, 239, 196));
-        iconProfile.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        iconProfile.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         iconProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (7).png"))); // NOI18N
         iconProfile.setText("Profil Admin");
         iconProfile.setIconTextGap(8);
@@ -96,7 +98,7 @@ public class MenuKata extends javax.swing.JFrame {
         });
 
         iconTambahKata.setBackground(new java.awt.Color(85, 239, 196));
-        iconTambahKata.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        iconTambahKata.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         iconTambahKata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (2).png"))); // NOI18N
         iconTambahKata.setText("Tambah Kata");
         iconTambahKata.setIconTextGap(8);
@@ -107,8 +109,8 @@ public class MenuKata extends javax.swing.JFrame {
         });
 
         iconHapusKata.setBackground(new java.awt.Color(85, 239, 196));
-        iconHapusKata.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        iconHapusKata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (4).png"))); // NOI18N
+        iconHapusKata.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
+        iconHapusKata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (1)_1.png"))); // NOI18N
         iconHapusKata.setText("Lihat Kata");
         iconHapusKata.setIconTextGap(8);
         iconHapusKata.addActionListener(new java.awt.event.ActionListener() {
@@ -118,6 +120,10 @@ public class MenuKata extends javax.swing.JFrame {
         });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (1).png"))); // NOI18N
+
+        jLabel8.setFont(new java.awt.Font("Trajan Pro", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("iPedia");
 
         javax.swing.GroupLayout menupanelLayout = new javax.swing.GroupLayout(menupanel);
         menupanel.setLayout(menupanelLayout);
@@ -135,13 +141,19 @@ public class MenuKata extends javax.swing.JFrame {
                     .addComponent(iconHapusKata, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                     .addComponent(iconTambahKata, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menupanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addGap(48, 48, 48))
         );
         menupanelLayout.setVerticalGroup(
             menupanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menupanelLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(120, 120, 120)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8)
+                .addGap(95, 95, 95)
                 .addComponent(iconProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(iconTambahKata, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -152,24 +164,27 @@ public class MenuKata extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        BodyPanel.add(menupanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 516));
+
         mainpanel.setBackground(new java.awt.Color(26, 188, 156));
         mainpanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         mainpanel.setLayout(new java.awt.CardLayout());
 
-        PanelTambahKata.setBackground(new java.awt.Color(0, 206, 201));
+        PanelTambahKata.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Constantia", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("TAMBAH KATA");
 
-        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Kata yang akan ditambahkan :");
 
-        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Constantia", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Deskripsi kata :");
 
+        jButton1.setFont(new java.awt.Font("Constantia", 0, 11)); // NOI18N
         jButton1.setText("Tambah");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,10 +196,11 @@ public class MenuKata extends javax.swing.JFrame {
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
-        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Masukkan ke :");
 
+        jComboBox1.setFont(new java.awt.Font("Constantia", 0, 11)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IF", "EL", "AR", "BI" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,7 +219,7 @@ public class MenuKata extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTambahKataLayout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox1, 0, 245, Short.MAX_VALUE)
+                        .addComponent(jComboBox1, 0, 249, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTextField1)
@@ -233,7 +249,7 @@ public class MenuKata extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         mainpanel.add(PanelTambahKata, "card2");
@@ -288,26 +304,7 @@ public class MenuKata extends javax.swing.JFrame {
 
         mainpanel.add(PanelProfile, "card4");
 
-        javax.swing.GroupLayout BodyPanelLayout = new javax.swing.GroupLayout(BodyPanel);
-        BodyPanel.setLayout(BodyPanelLayout);
-        BodyPanelLayout.setHorizontalGroup(
-            BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BodyPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(menupanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(mainpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        BodyPanelLayout.setVerticalGroup(
-            BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BodyPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(BodyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mainpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(menupanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+        BodyPanel.add(mainpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 11, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -461,6 +458,7 @@ public class MenuKata extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
