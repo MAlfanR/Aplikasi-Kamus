@@ -81,7 +81,7 @@ public class loginadmin extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 770, 130));
 
-        jButton1.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jButton1.setText("Masuk sebagai mahasiswa");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +90,7 @@ public class loginadmin extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 409, -1, 64));
 
-        button_masuk.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        button_masuk.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         button_masuk.setText("Masuk");
         button_masuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
