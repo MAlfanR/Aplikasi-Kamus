@@ -253,7 +253,11 @@ public class login extends javax.swing.JFrame {
             rs = ps.executeQuery();
         
         if(rs.next()) {
-            
+        menumahasiswa form = new menumahasiswa();
+        form.setVisible(true);
+        form.pack();
+        form.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
         else {
             JOptionPane.showMessageDialog(null, "Username atau Password salah!", "Login Gagal", 2);

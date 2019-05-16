@@ -5,6 +5,8 @@
  */
 package Frame;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author M Alfan R
@@ -29,11 +31,30 @@ public class menumahasiswa extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        iconprofil = new javax.swing.JButton();
+        iconlihatkata = new javax.swing.JButton();
+        icontopcontributor = new javax.swing.JButton();
+        iconlogout = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        Menuprofil = new javax.swing.JPanel();
+        profilmahasiswa = new javax.swing.JLabel();
+        namaa = new javax.swing.JTextField();
+        nama = new javax.swing.JLabel();
+        nim = new javax.swing.JLabel();
+        nimm = new javax.swing.JTextField();
+        tgllahir = new javax.swing.JLabel();
+        tgllahirr = new javax.swing.JTextField();
+        prodi = new javax.swing.JTextField();
+        prodii = new javax.swing.JLabel();
+        angkatann = new javax.swing.JTextField();
+        angkatan = new javax.swing.JLabel();
+        usernamee = new javax.swing.JTextField();
+        username = new javax.swing.JLabel();
+        password = new javax.swing.JLabel();
+        passwordd = new javax.swing.JPasswordField();
+        konfirmm = new javax.swing.JPasswordField();
+        konfirm = new javax.swing.JLabel();
+        gantipassword = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,23 +63,28 @@ public class menumahasiswa extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(15, 188, 249));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
 
-        jButton1.setText("Profil mahasiswa");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        iconprofil.setText("Profil mahasiswa");
+        iconprofil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                iconprofilActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Lihat kata");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        iconlihatkata.setText("Lihat kata");
+        iconlihatkata.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                iconlihatkataActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Top Contributor");
+        icontopcontributor.setText("Top Contributor");
 
-        jButton4.setText("Log out");
+        iconlogout.setText("Log out");
+        iconlogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iconlogoutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -67,38 +93,161 @@ public class menumahasiswa extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(iconlihatkata, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                    .addComponent(iconprofil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(icontopcontributor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(iconlogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(235, 235, 235)
-                .addComponent(jButton1)
+                .addComponent(iconprofil)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(iconlihatkata)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(icontopcontributor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(iconlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65))
         );
 
         jPanel3.setBackground(new java.awt.Color(56, 173, 169));
+        jPanel3.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 476, Short.MAX_VALUE)
+        Menuprofil.setBackground(new java.awt.Color(68, 189, 50));
+        Menuprofil.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
+
+        profilmahasiswa.setText("PROFIL MAHASISWA");
+
+        namaa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                namaaActionPerformed(evt);
+            }
+        });
+
+        nama.setText("Nama");
+
+        nim.setText("NIM");
+
+        tgllahir.setText("Tanggal Lahir");
+
+        prodi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prodiActionPerformed(evt);
+            }
+        });
+
+        prodii.setText("Program Studi");
+
+        angkatann.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                angkatannActionPerformed(evt);
+            }
+        });
+
+        angkatan.setText("Angkatan");
+
+        usernamee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameeActionPerformed(evt);
+            }
+        });
+
+        username.setText("Username");
+
+        password.setText("Password");
+
+        konfirm.setText("Konfirmasi Password");
+
+        gantipassword.setText("Ganti Password");
+
+        javax.swing.GroupLayout MenuprofilLayout = new javax.swing.GroupLayout(Menuprofil);
+        Menuprofil.setLayout(MenuprofilLayout);
+        MenuprofilLayout.setHorizontalGroup(
+            MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuprofilLayout.createSequentialGroup()
+                .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MenuprofilLayout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addComponent(profilmahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MenuprofilLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(nama))
+                    .addGroup(MenuprofilLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(nim))
+                    .addGroup(MenuprofilLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(prodii)
+                                .addComponent(tgllahir)
+                                .addComponent(namaa)
+                                .addComponent(nimm)
+                                .addComponent(tgllahirr)
+                                .addComponent(prodi)
+                                .addComponent(angkatann, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE))
+                            .addComponent(angkatan))
+                        .addGap(77, 77, 77)
+                        .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(konfirm)
+                            .addComponent(usernamee, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(username)
+                            .addComponent(password)
+                            .addComponent(passwordd, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(konfirmm, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(gantipassword, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 544, Short.MAX_VALUE)
+        MenuprofilLayout.setVerticalGroup(
+            MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuprofilLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MenuprofilLayout.createSequentialGroup()
+                        .addComponent(profilmahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21)
+                        .addComponent(nama)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(namaa, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nim)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nimm, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tgllahir)
+                            .addComponent(username))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(usernamee, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tgllahirr, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(prodii)
+                            .addComponent(password))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(passwordd, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 1, Short.MAX_VALUE))
+                    .addGroup(MenuprofilLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(prodi, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(angkatan)
+                .addGap(14, 14, 14)
+                .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(angkatann, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(konfirm))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(konfirmm, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(gantipassword, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57))
         );
+
+        jPanel3.add(Menuprofil, "card2");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -135,13 +284,47 @@ public class menumahasiswa extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void iconlihatkataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconlihatkataActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_iconlihatkataActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void iconprofilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconprofilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_iconprofilActionPerformed
+
+    private void prodiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prodiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_prodiActionPerformed
+
+    private void usernameeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameeActionPerformed
+
+    private void angkatannActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_angkatannActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_angkatannActionPerformed
+
+    private void iconlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconlogoutActionPerformed
+        // TODO add your handling code here:
+         int dialogBtn = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog(this, "Anda yakin akan keluar?", "PERINGATAN", dialogBtn);
+        
+        if (dialogResult==0) {
+            loginadmin form = new loginadmin();
+            form.setVisible(true);
+            form.pack();
+            form.setLocationRelativeTo(null);
+            this.dispose();
+        } else {
+            
+        }
+    }//GEN-LAST:event_iconlogoutActionPerformed
+
+    private void namaaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaaActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_namaaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,12 +362,31 @@ public class menumahasiswa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JPanel Menuprofil;
+    private javax.swing.JLabel angkatan;
+    private javax.swing.JTextField angkatann;
+    private javax.swing.JButton gantipassword;
+    private javax.swing.JButton iconlihatkata;
+    private javax.swing.JButton iconlogout;
+    private javax.swing.JButton iconprofil;
+    private javax.swing.JButton icontopcontributor;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel konfirm;
+    private javax.swing.JPasswordField konfirmm;
+    private javax.swing.JLabel nama;
+    private javax.swing.JTextField namaa;
+    private javax.swing.JLabel nim;
+    private javax.swing.JTextField nimm;
+    private javax.swing.JLabel password;
+    private javax.swing.JPasswordField passwordd;
+    private javax.swing.JTextField prodi;
+    private javax.swing.JLabel prodii;
+    private javax.swing.JLabel profilmahasiswa;
+    private javax.swing.JLabel tgllahir;
+    private javax.swing.JTextField tgllahirr;
+    private javax.swing.JLabel username;
+    private javax.swing.JTextField usernamee;
     // End of variables declaration//GEN-END:variables
 }
