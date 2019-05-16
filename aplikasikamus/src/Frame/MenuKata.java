@@ -110,7 +110,7 @@ public class MenuKata extends javax.swing.JFrame {
 
         iconHapusKata.setBackground(new java.awt.Color(85, 239, 196));
         iconHapusKata.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
-        iconHapusKata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (1)_1.png"))); // NOI18N
+        iconHapusKata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (3).png"))); // NOI18N
         iconHapusKata.setText("Lihat Kata");
         iconHapusKata.setIconTextGap(8);
         iconHapusKata.addActionListener(new java.awt.event.ActionListener() {
