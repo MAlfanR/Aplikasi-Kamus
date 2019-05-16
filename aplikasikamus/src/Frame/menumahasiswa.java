@@ -5,14 +5,6 @@
  */
 package Frame;
 
-import Koneksi.Db_koneksi;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -173,13 +165,13 @@ public class menumahasiswa extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addGap(48, 48, 48)
+                .addGap(122, 122, 122)
                 .addComponent(iconprofil)
                 .addGap(18, 18, 18)
                 .addComponent(iconlihatkata, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(icontopcontributor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                 .addComponent(iconlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65))
         );
@@ -304,24 +296,28 @@ public class menumahasiswa extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nim)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nimm, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MenuprofilLayout.createSequentialGroup()
+                        .addComponent(nimm, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tgllahir)
+                            .addComponent(username))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(usernamee, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tgllahirr, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(prodii)
+                            .addComponent(password))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(passwordd, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 9, Short.MAX_VALUE))
+                    .addGroup(MenuprofilLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(prodi, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tgllahir)
-                    .addComponent(username))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(usernamee, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tgllahirr, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(prodii)
-                    .addComponent(password))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(passwordd, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(prodi, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 27, Short.MAX_VALUE)
                 .addComponent(angkatan)
                 .addGap(14, 14, 14)
                 .addGroup(MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -751,23 +747,6 @@ public class menumahasiswa extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        try{
-            Connection con = Db_koneksi.getKoneksi();
-            Statement st = con.createStatement();
-            String keyword = jTextField1.getText();
-            String query = "select deskripsi_kata from kata where keyword='"+keyword+"' AND kd_prodi = 'IF'";
-            ResultSet rs = st.executeQuery(query);
-            String s = null;
-            while(rs.next()){
-                s = rs.getString(1);
-            }
-            jTextArea1.setText(s);
-            if (!jTextArea1.getText().equals(s)) {
-                JOptionPane.showMessageDialog(null, "Kata tidak tersedia");
-            }
-        }catch(Exception e){
-        }
-        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -783,22 +762,6 @@ public class menumahasiswa extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-         try{
-            Connection con = Db_koneksi.getKoneksi();
-            Statement st = con.createStatement();
-            String keyword = jTextField2.getText();
-            String query = "select deskripsi_kata from kata where keyword='"+keyword+"' AND kd_prodi='EL'";
-            ResultSet rs = st.executeQuery(query);
-            String s = null;
-            while(rs.next()){
-                s = rs.getString(1);
-            }
-            jTextArea2.setText(s);
-            if (!jTextArea2.getText().equals(s)) {
-                JOptionPane.showMessageDialog(null, "Kata tidak tersedia");
-            }
-        }catch(Exception e){
-        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -814,22 +777,6 @@ public class menumahasiswa extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-         try{
-            Connection con = Db_koneksi.getKoneksi();
-            Statement st = con.createStatement();
-            String keyword = jTextField3.getText();
-            String query = "select deskripsi_kata from kata where keyword='"+keyword+"'kd_prodi='AR'";
-            ResultSet rs = st.executeQuery(query);
-            String s = null;
-            while(rs.next()){
-                s = rs.getString(1);
-            }
-            jTextArea3.setText(s);
-            if (!jTextArea3.getText().equals(s)) {
-                JOptionPane.showMessageDialog(null, "Kata tidak tersedia");
-            }
-        }catch(Exception e){
-        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -856,22 +803,7 @@ public class menumahasiswa extends javax.swing.JFrame {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
-         try{
-            Connection con = Db_koneksi.getKoneksi();
-            Statement st = con.createStatement();
-            String keyword = jTextField4.getText();
-            String query = "select deskripsi_kata from kata where keyword='"+keyword+"' AND kd_prodi='BI'";
-            ResultSet rs = st.executeQuery(query);
-            String s = null;
-            while(rs.next()){
-                s = rs.getString(1);
-            }
-            jTextArea4.setText(s);
-            if (!jTextArea4.getText().equals(s)) {
-                JOptionPane.showMessageDialog(null, "Kata tidak tersedia");
-            }
-        }catch(Exception e){
-        }
+        String carkat;
         
     }//GEN-LAST:event_jButton11ActionPerformed
 
@@ -961,11 +893,11 @@ public class menumahasiswa extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    public javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
-    public javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;

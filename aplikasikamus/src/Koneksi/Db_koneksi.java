@@ -16,7 +16,6 @@ public class Db_koneksi {
             user = "root",
             pass = "";
     try {
-    DriverManager.registerDriver(new com.mysql.jdbc.Driver());
     conn = (Connection) DriverManager.getConnection(host, user, pass);
 } catch (SQLException err) {
     JOptionPane.showMessageDialog (null, err.getMessage());
