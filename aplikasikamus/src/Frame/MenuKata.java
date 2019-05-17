@@ -936,17 +936,29 @@ public class MenuKata extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         PreparedStatement ps;
-        ResultSet rs;
+        
         String keyword;
         
         keyword = katahapus.getText();
-        String query = "DELETE FROM kata where keyword = '"+keyword+"'";  
+        String query = "DELETE FROM kata where keyword = '"+keyword+"'";
+        String query2 = "SELECT keyword FROM kata WHERE keyword='"+keyword+"'";
         try {
             ps = Db_koneksi.getKoneksi().prepareStatement(query);
-           
+            Connection con = Db_koneksi.getKoneksi();
+            Statement st = con.createStatement();
             
-            ps.execute();
-            JOptionPane.showMessageDialog(null, "Kata berhasil dihapus");
+            ResultSet rs = st.executeQuery(query2);
+            String s = null;
+            while (rs.next()) {
+                s = rs.getString(1);
+            }
+            katahapus.setText (s);
+            if (!katahapus.getText().equals(s)) {
+                JOptionPane.showMessageDialog(null,"Kata tidak ada!");
+            } else {
+                ps.execute();
+                JOptionPane.showMessageDialog(null, "Kata berhasil dihapus");
+            }
         } catch(SQLException ex) {
             Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
         }
