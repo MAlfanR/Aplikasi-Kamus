@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2019 at 02:59 AM
+-- Generation Time: May 17, 2019 at 11:00 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -41,6 +41,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`nama_admin`, `password`, `nip`, `jenis_kelamin`, `username`) VALUES
+('lalala', '1234', 9876, 'perempuan', 'qwerty'),
 ('Budi', '1234', 11223344, 'Laki-laki', 'budi123'),
 ('Rani', 'asdfg', 22334455, 'Perempuan', 'rani234');
 
@@ -62,10 +63,12 @@ CREATE TABLE `kata` (
 
 INSERT INTO `kata` (`keyword`, `deskripsi_kata`, `kd_prodi`) VALUES
 ('', '', 'IF'),
+('arsitektur', 'hmmmm', 'AR'),
 ('c++', 'bahasa pemrograman', 'IF'),
 ('java', 'bahasa pemrograman', 'IF'),
 ('Linux', 'Merupakan salah satu sistem operasi', 'IF'),
 ('Phyton', 'interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python\'s design philosophy emphasizes code readability with its notable use of significant whitespace. ', 'IF'),
+('searching', 'pencarian ', 'IF'),
 ('tumbuhan', 'sebuah tanaman yang', 'BI');
 
 -- --------------------------------------------------------
@@ -90,6 +93,7 @@ CREATE TABLE `mahasiswa` (
 
 INSERT INTO `mahasiswa` (`nim`, `name`, `tgl_lahir`, `username`, `password`, `prodi`, `angkatan`) VALUES
 (14117, 'Andi', '30-11-1999', 'andiriyad', '123456', 'T.Informatika', 2018),
+(123321, 'ranger', '20-10-1999', 'yeays', '123456', 'Elektro', 2017),
 (14117150, 'M.Alfan', '25-11-1999', 'ranger25', '123456', 'T.Informatika', 2017);
 
 -- --------------------------------------------------------
@@ -99,18 +103,19 @@ INSERT INTO `mahasiswa` (`nim`, `name`, `tgl_lahir`, `username`, `password`, `pr
 --
 
 CREATE TABLE `prodi` (
-  `kd_prodi` char(3) NOT NULL
+  `kd_prodi` char(3) NOT NULL,
+  `nama_prodi` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `prodi`
 --
 
-INSERT INTO `prodi` (`kd_prodi`) VALUES
-('AR'),
-('BI'),
-('EL'),
-('IF');
+INSERT INTO `prodi` (`kd_prodi`, `nama_prodi`) VALUES
+('AR', NULL),
+('BI', NULL),
+('EL', NULL),
+('IF', NULL);
 
 --
 -- Indexes for dumped tables
