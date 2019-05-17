@@ -15,26 +15,49 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author hp
  */
 public class MenuKata extends javax.swing.JFrame {
-
+    public Connection conn;
+    public Statement st;
+    public ResultSet rs;
+    public DefaultTableModel model;
     /**
      * Creates new form MenuKata
      */
     public MenuKata() {
         initComponents();
-        
+        String[] header = {"No","Nama","Password","NIP","J.Kelamin","Username"};
+        model = new DefaultTableModel(header,0);
+        tabel2.setModel(model);
+        muncul();
         //Fungsi agar jendela menu kata tidak bisa di maximize
         setExtendedState(JFrame.MAXIMIZED_HORIZ);
         setVisible(true);
         setResizable(false);
         
     }
-
+    public void muncul(){
+        Db_koneksi Koneksi = new Db_koneksi();
+        try{
+            conn = Koneksi.getKoneksi();
+            st = conn.createStatement();
+            rs = st.executeQuery("SELECT * FROM admin");
+            int no = 1;
+            while(rs.next()){
+                String[] kolom = {Integer.toString(no),rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)};
+                model.addRow(kolom);
+                no++;
+            }
+              tabel2.setModel(model);
+        } catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        } 
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -75,6 +98,8 @@ public class MenuKata extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         PanelProfile = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tabel2 = new javax.swing.JTable();
         paneleditkata = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         kataedit = new javax.swing.JTextField();
@@ -144,6 +169,7 @@ public class MenuKata extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("iPedia");
 
+        jButton2.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         jButton2.setText("Edit Kata");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,12 +214,12 @@ public class MenuKata extends javax.swing.JFrame {
                 .addComponent(iconHapusKata, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                 .addComponent(iconLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        BodyPanel.add(menupanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 516));
+        BodyPanel.add(menupanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 550));
 
         mainpanel.setBackground(new java.awt.Color(26, 188, 156));
         mainpanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
@@ -254,7 +280,7 @@ public class MenuKata extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTambahKataLayout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox1, 0, 249, Short.MAX_VALUE)
+                        .addComponent(jComboBox1, 0, 245, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTextField1)
@@ -284,14 +310,14 @@ public class MenuKata extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
 
         mainpanel.add(PanelTambahKata, "card2");
 
-        PanelHapusKata.setBackground(new java.awt.Color(116, 185, 255));
+        PanelHapusKata.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Constantia", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("HAPUS KATA");
 
@@ -299,6 +325,8 @@ public class MenuKata extends javax.swing.JFrame {
         jTextArea3.setRows(5);
         jScrollPane3.setViewportView(jTextArea3);
 
+        jLabel9.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Kata yang ingin di hapus");
 
         katahapus.addActionListener(new java.awt.event.ActionListener() {
@@ -307,6 +335,7 @@ public class MenuKata extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setFont(new java.awt.Font("Constantia", 0, 11)); // NOI18N
         jButton3.setText("Hapus");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -314,6 +343,7 @@ public class MenuKata extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setFont(new java.awt.Font("Constantia", 0, 11)); // NOI18N
         jButton4.setText("Cari");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -321,6 +351,8 @@ public class MenuKata extends javax.swing.JFrame {
             }
         });
 
+        jLabel11.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Deskripsi kata");
 
         javax.swing.GroupLayout PanelHapusKataLayout = new javax.swing.GroupLayout(PanelHapusKata);
@@ -334,23 +366,18 @@ public class MenuKata extends javax.swing.JFrame {
             .addGroup(PanelHapusKataLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelHapusKataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelHapusKataLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel11)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3)
                     .addGroup(PanelHapusKataLayout.createSequentialGroup()
                         .addGroup(PanelHapusKataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9)
                             .addGroup(PanelHapusKataLayout.createSequentialGroup()
-                                .addGroup(PanelHapusKataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9)
-                                    .addGroup(PanelHapusKataLayout.createSequentialGroup()
-                                        .addComponent(katahapus, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(30, 30, 30)
-                                        .addComponent(jButton4)))
-                                .addGap(0, 59, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                                .addComponent(katahapus, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(jButton4))
+                            .addComponent(jLabel11))
+                        .addGap(0, 55, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         PanelHapusKataLayout.setVerticalGroup(
             PanelHapusKataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -369,38 +396,60 @@ public class MenuKata extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         mainpanel.add(PanelHapusKata, "card3");
 
-        PanelProfile.setBackground(new java.awt.Color(153, 204, 255));
+        PanelProfile.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Constantia", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("PROFIL PENGGUNA");
+        jLabel6.setText("PROFIL ADMIN");
+
+        tabel2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(tabel2);
 
         javax.swing.GroupLayout PanelProfileLayout = new javax.swing.GroupLayout(PanelProfile);
         PanelProfile.setLayout(PanelProfileLayout);
         PanelProfileLayout.setHorizontalGroup(
             PanelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelProfileLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addContainerGap(298, Short.MAX_VALUE))
+                .addGroup(PanelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelProfileLayout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(jLabel6))
+                    .addGroup(PanelProfileLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelProfileLayout.setVerticalGroup(
             PanelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelProfileLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(543, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         mainpanel.add(PanelProfile, "card4");
 
-        paneleditkata.setBackground(new java.awt.Color(41, 128, 185));
+        paneleditkata.setBackground(new java.awt.Color(0, 153, 153));
 
+        jLabel10.setFont(new java.awt.Font("Constantia", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("EDIT KATA");
 
         kataedit.addActionListener(new java.awt.event.ActionListener() {
@@ -409,8 +458,12 @@ public class MenuKata extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Kata yang ingin di edit");
 
+        carii.setBackground(new java.awt.Color(0, 153, 153));
+        carii.setFont(new java.awt.Font("Constantia", 0, 11)); // NOI18N
         carii.setText("Cari");
         carii.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -418,8 +471,11 @@ public class MenuKata extends javax.swing.JFrame {
             }
         });
 
+        jLabel13.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Deskripsi kata");
 
+        jButton6.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
         jButton6.setText("Edit");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -439,61 +495,59 @@ public class MenuKata extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(paneleditkataLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel13))
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(paneleditkataLayout.createSequentialGroup()
                         .addComponent(kataedit, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(carii))
-                    .addComponent(jLabel12))
-                .addContainerGap(68, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(carii)
+                        .addGap(65, 65, 65))
+                    .addGroup(paneleditkataLayout.createSequentialGroup()
+                        .addComponent(deskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(15, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneleditkataLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
-            .addGroup(paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(paneleditkataLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(deskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(25, Short.MAX_VALUE)))
+                .addGap(27, 27, 27))
         );
         paneleditkataLayout.setVerticalGroup(
             paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneleditkataLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(kataedit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(carii))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel13)
-                .addGap(283, 283, 283)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(107, Short.MAX_VALUE))
-            .addGroup(paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(paneleditkataLayout.createSequentialGroup()
-                    .addGap(195, 195, 195)
-                    .addComponent(deskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(195, Short.MAX_VALUE)))
+                .addGap(76, 76, 76))
         );
 
         mainpanel.add(paneleditkata, "card5");
 
-        BodyPanel.add(mainpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 11, -1, -1));
+        BodyPanel.add(mainpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 11, 470, 550));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 677, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(BodyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -766,6 +820,7 @@ public class MenuKata extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
@@ -775,5 +830,6 @@ public class MenuKata extends javax.swing.JFrame {
     private javax.swing.JPanel mainpanel;
     private javax.swing.JPanel menupanel;
     private javax.swing.JPanel paneleditkata;
+    private javax.swing.JTable tabel2;
     // End of variables declaration//GEN-END:variables
 }
