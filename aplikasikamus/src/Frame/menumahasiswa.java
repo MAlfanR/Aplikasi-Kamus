@@ -27,7 +27,7 @@ public class menumahasiswa extends javax.swing.JFrame {
      */
     public menumahasiswa() {
         initComponents();
-        String[] header = {"No","NIM","F.Name","L.Name","TTL","Username","Password","Prodi","Angkatan"};
+        String[] header = {"No","NIM","Nama","TTL","Prodi","Angkatan"};
         model = new DefaultTableModel(header,0);
         tabel.setModel(model);
         tampil();
@@ -40,7 +40,7 @@ public class menumahasiswa extends javax.swing.JFrame {
             rs = st.executeQuery("SELECT * FROM mahasiswa");
             int no = 1;
             while(rs.next()){
-                String[] row = {Integer.toString(no),rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8)};
+                String[] row = {Integer.toString(no),rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(6),rs.getString(7)};
                 model.addRow(row);
                 no++;
             }
@@ -69,7 +69,6 @@ public class menumahasiswa extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         Menuprofil = new javax.swing.JPanel();
         profilmahasiswa = new javax.swing.JLabel();
-        gantipassword = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         tabel = new javax.swing.JTable();
         Lihatkata = new javax.swing.JPanel();
@@ -207,11 +206,6 @@ public class menumahasiswa extends javax.swing.JFrame {
         profilmahasiswa.setForeground(new java.awt.Color(255, 255, 255));
         profilmahasiswa.setText("PROFIL MAHASISWA");
 
-        gantipassword.setBackground(new java.awt.Color(255, 255, 255));
-        gantipassword.setFont(new java.awt.Font("Constantia", 0, 14)); // NOI18N
-        gantipassword.setForeground(new java.awt.Color(255, 255, 255));
-        gantipassword.setText("Ganti Password");
-
         tabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -229,18 +223,14 @@ public class menumahasiswa extends javax.swing.JFrame {
         Menuprofil.setLayout(MenuprofilLayout);
         MenuprofilLayout.setHorizontalGroup(
             MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuprofilLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(gantipassword, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuprofilLayout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(MenuprofilLayout.createSequentialGroup()
                 .addGap(145, 145, 145)
                 .addComponent(profilmahasiswa)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuprofilLayout.createSequentialGroup()
+                .addContainerGap(11, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         MenuprofilLayout.setVerticalGroup(
             MenuprofilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,9 +239,7 @@ public class menumahasiswa extends javax.swing.JFrame {
                 .addComponent(profilmahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(361, 361, 361)
-                .addComponent(gantipassword, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                .addGap(419, 419, 419))
         );
 
         jPanel3.add(Menuprofil, "card2");
@@ -305,17 +293,17 @@ public class menumahasiswa extends javax.swing.JFrame {
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LihatkataLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(LihatkataLayout.createSequentialGroup()
+                .addGap(191, 191, 191)
                 .addComponent(jLabel15)
-                .addGap(162, 162, 162))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LihatkataLayout.setVerticalGroup(
             LihatkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LihatkataLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel15)
-                .addGap(61, 61, 61)
+                .addGap(63, 63, 63)
                 .addGroup(LihatkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -616,11 +604,11 @@ public class menumahasiswa extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 772, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 786, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 658, Short.MAX_VALUE)
         );
 
         pack();
@@ -843,7 +831,6 @@ public class menumahasiswa extends javax.swing.JFrame {
     private javax.swing.JPanel Informatika;
     private javax.swing.JPanel Lihatkata;
     private javax.swing.JPanel Menuprofil;
-    private javax.swing.JButton gantipassword;
     private javax.swing.JButton iconlihatkata;
     private javax.swing.JButton iconlogout;
     private javax.swing.JButton iconprofil;

@@ -24,7 +24,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="BodyPanel" alignment="0" pref="677" max="32767" attributes="0"/>
+          <Component id="BodyPanel" alignment="0" pref="684" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -121,9 +121,6 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="iconLogOut">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="c4" green="ef" red="55" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Constantia" size="12" style="1"/>
                 </Property>
@@ -139,9 +136,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="iconProfile">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="c4" green="ef" red="55" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Constantia" size="12" style="1"/>
                 </Property>
@@ -157,9 +151,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="iconTambahKata">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="c4" green="ef" red="55" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Constantia" size="12" style="1"/>
                 </Property>
@@ -175,9 +166,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="iconHapusKata">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="c4" green="ef" red="55" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Constantia" size="12" style="1"/>
                 </Property>

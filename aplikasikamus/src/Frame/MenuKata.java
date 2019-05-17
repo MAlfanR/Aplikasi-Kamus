@@ -31,7 +31,7 @@ public class MenuKata extends javax.swing.JFrame {
      */
     public MenuKata() {
         initComponents();
-        String[] header = {"No","Nama","Password","NIP","J.Kelamin","Username"};
+        String[] header = {"No","Nama","NIP","J.Kelamin"};
         model = new DefaultTableModel(header,0);
         tabel2.setModel(model);
         muncul();
@@ -49,7 +49,7 @@ public class MenuKata extends javax.swing.JFrame {
             rs = st.executeQuery("SELECT * FROM admin");
             int no = 1;
             while(rs.next()){
-                String[] kolom = {Integer.toString(no),rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)};
+                String[] kolom = {Integer.toString(no),rs.getString(1),rs.getString(3),rs.getString(4)};
                 model.addRow(kolom);
                 no++;
             }
@@ -119,7 +119,6 @@ public class MenuKata extends javax.swing.JFrame {
         menupanel.setBackground(new java.awt.Color(116, 185, 255));
         menupanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
 
-        iconLogOut.setBackground(new java.awt.Color(85, 239, 196));
         iconLogOut.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         iconLogOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (5).png"))); // NOI18N
         iconLogOut.setText("Log Out");
@@ -130,7 +129,6 @@ public class MenuKata extends javax.swing.JFrame {
             }
         });
 
-        iconProfile.setBackground(new java.awt.Color(85, 239, 196));
         iconProfile.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         iconProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (7).png"))); // NOI18N
         iconProfile.setText("Profil Admin");
@@ -141,7 +139,6 @@ public class MenuKata extends javax.swing.JFrame {
             }
         });
 
-        iconTambahKata.setBackground(new java.awt.Color(85, 239, 196));
         iconTambahKata.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         iconTambahKata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (2).png"))); // NOI18N
         iconTambahKata.setText("Tambah Kata");
@@ -152,7 +149,6 @@ public class MenuKata extends javax.swing.JFrame {
             }
         });
 
-        iconHapusKata.setBackground(new java.awt.Color(85, 239, 196));
         iconHapusKata.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         iconHapusKata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Webp.net-resizeimage (4).png"))); // NOI18N
         iconHapusKata.setText("Hapus Kata");
@@ -541,7 +537,7 @@ public class MenuKata extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 677, Short.MAX_VALUE)
+            .addComponent(BodyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
