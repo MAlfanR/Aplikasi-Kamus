@@ -76,6 +76,8 @@ public class MenuKata extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        mahasiswa = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         mainpanel = new javax.swing.JPanel();
         PanelTambahKata = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -109,6 +111,36 @@ public class MenuKata extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         deskripsi = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
+        panelmahasiswa = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        nimm = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        namaa = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        tanggall = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        usernamee = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        passwordd = new javax.swing.JPasswordField();
+        jLabel20 = new javax.swing.JLabel();
+        prodii = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        angkatann = new javax.swing.JTextField();
+        tambahh = new javax.swing.JButton();
+        paneladmin = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        a = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        b = new javax.swing.JTextField();
+        c = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        d = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        e = new javax.swing.JPasswordField();
+        f = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Kata");
@@ -173,6 +205,20 @@ public class MenuKata extends javax.swing.JFrame {
             }
         });
 
+        mahasiswa.setText("Tambah Mahasiswa");
+        mahasiswa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mahasiswaActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("Tambah Admin");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout menupanelLayout = new javax.swing.GroupLayout(menupanel);
         menupanel.setLayout(menupanelLayout);
         menupanelLayout.setHorizontalGroup(
@@ -192,7 +238,9 @@ public class MenuKata extends javax.swing.JFrame {
                     .addComponent(iconProfile, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                     .addComponent(iconHapusKata, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                     .addComponent(iconTambahKata, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mahasiswa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         menupanelLayout.setVerticalGroup(
@@ -202,15 +250,19 @@ public class MenuKata extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
-                .addGap(95, 95, 95)
+                .addGap(52, 52, 52)
                 .addComponent(iconProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(iconTambahKata, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(iconHapusKata, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
                 .addComponent(iconLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -491,19 +543,17 @@ public class MenuKata extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(paneleditkataLayout.createSequentialGroup()
-                        .addGroup(paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel13))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(paneleditkataLayout.createSequentialGroup()
                         .addComponent(kataedit, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(carii)
                         .addGap(65, 65, 65))
                     .addGroup(paneleditkataLayout.createSequentialGroup()
-                        .addComponent(deskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(15, Short.MAX_VALUE))))
+                        .addGroup(paneleditkataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)
+                            .addComponent(deskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneleditkataLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -530,6 +580,225 @@ public class MenuKata extends javax.swing.JFrame {
         );
 
         mainpanel.add(paneleditkata, "card5");
+
+        panelmahasiswa.setBackground(new java.awt.Color(50, 240, 240));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel14.setText("TAMBAH MAHASISWA");
+
+        nimm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nimmActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setText("Nama");
+
+        jLabel16.setText("NIM");
+
+        namaa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                namaaActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Tanggal lahir");
+
+        tanggall.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tanggallActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setText("Username");
+
+        usernamee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameeActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("Program Studi");
+
+        jLabel20.setText("Password");
+
+        prodii.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prodiiActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("Angkatan");
+
+        angkatann.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                angkatannActionPerformed(evt);
+            }
+        });
+
+        tambahh.setText("Tambah");
+        tambahh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tambahhActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelmahasiswaLayout = new javax.swing.GroupLayout(panelmahasiswa);
+        panelmahasiswa.setLayout(panelmahasiswaLayout);
+        panelmahasiswaLayout.setHorizontalGroup(
+            panelmahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelmahasiswaLayout.createSequentialGroup()
+                .addContainerGap(146, Short.MAX_VALUE)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(133, 133, 133))
+            .addGroup(panelmahasiswaLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(panelmahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(angkatann)
+                    .addComponent(jLabel21)
+                    .addComponent(prodii)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel16)
+                    .addComponent(usernamee, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                    .addComponent(jLabel18)
+                    .addComponent(tanggall, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                    .addComponent(jLabel17)
+                    .addComponent(namaa, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                    .addComponent(jLabel15)
+                    .addComponent(nimm)
+                    .addComponent(passwordd))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tambahh)
+                .addGap(54, 54, 54))
+        );
+        panelmahasiswaLayout.setVerticalGroup(
+            panelmahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelmahasiswaLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel14)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nimm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(namaa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tanggall, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(usernamee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelmahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panelmahasiswaLayout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addGap(27, 27, 27)
+                        .addComponent(passwordd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tambahh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(prodii, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(angkatann, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
+        );
+
+        mainpanel.add(panelmahasiswa, "card6");
+
+        paneladmin.setBackground(new java.awt.Color(41, 128, 185));
+
+        jLabel22.setText("TAMBAH ADMIN");
+
+        jLabel23.setText("Nama");
+
+        jLabel24.setText("NIP");
+
+        jLabel25.setText("Jenis Kelamin");
+
+        jLabel26.setText("Username");
+
+        jLabel27.setText("Password");
+
+        e.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eActionPerformed(evt);
+            }
+        });
+
+        f.setText("Tambah");
+        f.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout paneladminLayout = new javax.swing.GroupLayout(paneladmin);
+        paneladmin.setLayout(paneladminLayout);
+        paneladminLayout.setHorizontalGroup(
+            paneladminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paneladminLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(paneladminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel26)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel23)
+                    .addComponent(a)
+                    .addComponent(b)
+                    .addComponent(c, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                    .addComponent(d)
+                    .addComponent(e))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneladminLayout.createSequentialGroup()
+                .addContainerGap(174, Short.MAX_VALUE)
+                .addGroup(paneladminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneladminLayout.createSequentialGroup()
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(87, 87, 87))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paneladminLayout.createSequentialGroup()
+                        .addComponent(f, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79))))
+        );
+        paneladminLayout.setVerticalGroup(
+            paneladminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(paneladminLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel22)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel25)
+                .addGap(3, 3, 3)
+                .addComponent(c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(d, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(e, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addComponent(f, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84))
+        );
+
+        mainpanel.add(paneladmin, "card7");
 
         BodyPanel.add(mainpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 11, 470, 550));
 
@@ -749,6 +1018,123 @@ public class MenuKata extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cariiActionPerformed
 
+    private void nimmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nimmActionPerformed
+
+    private void namaaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_namaaActionPerformed
+
+    private void tanggallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tanggallActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tanggallActionPerformed
+
+    private void usernameeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameeActionPerformed
+
+    private void prodiiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prodiiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_prodiiActionPerformed
+
+    private void angkatannActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_angkatannActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_angkatannActionPerformed
+
+    private void mahasiswaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mahasiswaActionPerformed
+        // TODO add your handling code here:
+        mainpanel.removeAll();
+        mainpanel.repaint();
+        mainpanel.revalidate();
+        //ADD PANEL
+        mainpanel.add(panelmahasiswa);
+        mainpanel.repaint();
+        mainpanel.revalidate();
+    }//GEN-LAST:event_mahasiswaActionPerformed
+
+    private void tambahhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahhActionPerformed
+        // TODO add your handling code here:
+         PreparedStatement ps;
+        ResultSet rs;
+        String nim , nama, tanggal,username , password, prodi , angkatan;
+      
+        
+        nim = nimm.getText();
+        nama= namaa.getText();
+        tanggal = tanggall.getText();
+        username = usernamee.getText();
+        password= String.valueOf(passwordd.getPassword());
+        prodi = prodii.getText();
+        angkatan = angkatann.getText();
+        String query = "INSERT INTO mahasiswa VALUES (?,?,?,?,?,?,?)";
+        
+        try {
+            ps = Db_koneksi.getKoneksi().prepareStatement(query);
+            
+            ps.setString (1, nim);
+            ps.setString (2, nama);
+            ps.setString (3, tanggal); 
+            ps.setString (4, username);
+            ps.setString (5, password); 
+            ps.setString (6, prodi); 
+            ps.setString (7, angkatan); 
+            
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Mahasiswa berhasil di tambahkan");
+        } catch(SQLException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tambahhActionPerformed
+
+    private void eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eActionPerformed
+
+    private void fActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fActionPerformed
+        // TODO add your handling code here:
+        // tambah admin
+           PreparedStatement ps;
+        ResultSet rs;
+        String namax , nipx, jkx , usernamex , passwordx;
+      
+        
+        namax= a.getText();
+        nipx= b.getText();
+        jkx = c.getText();
+        usernamex = d.getText();
+        passwordx= String.valueOf(e.getPassword());
+       
+        String query = "INSERT INTO admin VALUES (?,?,?,?,?)";
+        
+        try {
+            ps = Db_koneksi.getKoneksi().prepareStatement(query);
+            
+            ps.setString (1, namax);
+            ps.setString (2, passwordx);
+            ps.setString (3, nipx); 
+            ps.setString (4, jkx);
+            ps.setString (5, usernamex); 
+ 
+            
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Admin berhasil di tambahkan");
+        } catch(SQLException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_fActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        mainpanel.removeAll();
+        mainpanel.repaint();
+        mainpanel.revalidate();
+        //ADD PANEL
+        mainpanel.add(paneladmin);
+        mainpanel.repaint();
+        mainpanel.revalidate();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -789,8 +1175,15 @@ public class MenuKata extends javax.swing.JFrame {
     private javax.swing.JPanel PanelHapusKata;
     private javax.swing.JPanel PanelProfile;
     private javax.swing.JPanel PanelTambahKata;
+    private javax.swing.JTextField a;
+    private javax.swing.JTextField angkatann;
+    private javax.swing.JTextField b;
+    private javax.swing.JTextField c;
     private javax.swing.JButton carii;
+    private javax.swing.JTextField d;
     private javax.swing.JScrollPane deskripsi;
+    private javax.swing.JPasswordField e;
+    private javax.swing.JButton f;
     private javax.swing.JButton iconHapusKata;
     private javax.swing.JButton iconLogOut;
     private javax.swing.JButton iconProfile;
@@ -799,6 +1192,7 @@ public class MenuKata extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -806,7 +1200,21 @@ public class MenuKata extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -823,9 +1231,19 @@ public class MenuKata extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField kataedit;
     private javax.swing.JTextField katahapus;
+    private javax.swing.JButton mahasiswa;
     private javax.swing.JPanel mainpanel;
     private javax.swing.JPanel menupanel;
+    private javax.swing.JTextField namaa;
+    private javax.swing.JTextField nimm;
+    private javax.swing.JPanel paneladmin;
     private javax.swing.JPanel paneleditkata;
+    private javax.swing.JPanel panelmahasiswa;
+    private javax.swing.JPasswordField passwordd;
+    private javax.swing.JTextField prodii;
     private javax.swing.JTable tabel2;
+    private javax.swing.JButton tambahh;
+    private javax.swing.JTextField tanggall;
+    private javax.swing.JTextField usernamee;
     // End of variables declaration//GEN-END:variables
 }
