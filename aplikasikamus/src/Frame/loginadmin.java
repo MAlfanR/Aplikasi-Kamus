@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
  * @author hp
  */
 public class loginadmin extends javax.swing.JFrame {
-
+    boolean loginn = false;
     /**
      * Creates new form loginadmin
      */
@@ -176,6 +176,7 @@ public class loginadmin extends javax.swing.JFrame {
             rs = ps.executeQuery();
         
         if(rs.next()) {
+            loginn = true;
         MenuKata form = new MenuKata();
         form.setVisible(true);
         form.pack();

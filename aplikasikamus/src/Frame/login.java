@@ -20,12 +20,14 @@ import javax.swing.JOptionPane;
  * @author M Alfan R
  */
 public class login extends javax.swing.JFrame {
-String a , b;
+
     /**
      * Creates new form login
      */
+      boolean masuk =false;
     public login() {
         initComponents();
+      
     }
 
     /**
@@ -174,6 +176,7 @@ String a , b;
             rs = ps.executeQuery();
         
         if(rs.next()) {
+            masuk = true;
         menumahasiswa form = new menumahasiswa();
         form.setVisible(true);
         form.pack();

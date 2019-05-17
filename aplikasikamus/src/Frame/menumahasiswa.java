@@ -953,14 +953,17 @@ public class menumahasiswa extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-       java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
+       java.awt.EventQueue.invokeLater(() -> {
+           login x1 = new login();
+            if (x1.masuk == false) {
+             //   new menumahasiswa().setVisible(false);
+                new login().setVisible(true);
+            } else {
                 new menumahasiswa().setVisible(true);
             }
         });
-    }
-
+    
+               }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Arsitektur;

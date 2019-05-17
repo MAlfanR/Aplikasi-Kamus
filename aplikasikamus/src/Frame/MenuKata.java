@@ -1165,7 +1165,12 @@ public class MenuKata extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                loginadmin v = new loginadmin();
+                if (v.loginn == false){
+                    new loginadmin().setVisible(true);
+                }else {
                 new MenuKata().setVisible(true);
+            }
             }
         });
     }
